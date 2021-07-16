@@ -14,3 +14,14 @@ a {
 * {
   box-sizing: border-box;
 }
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #yazdir * {
+    visibility: visible;
+  }
+}
+.break {
+  page-break-before: always;
+}
