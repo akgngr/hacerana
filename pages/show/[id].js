@@ -2,7 +2,7 @@ import react from 'react';
 import Layout from '../../components/layout';
 import {getRecordById} from '../../lib/getSaglikliyasam'
 import Saglikliyasam from '../../lib/getSaglikliyasam'
-
+import Link from "next/link"
 
 export const getStaticPaths = async () => {
     const posts = await Saglikliyasam();
@@ -29,7 +29,9 @@ export default function Show({post}){
 
         <Layout>
             <div className="d-flex position-fixed top-0 end-0 pt-5 flex-column mt-5">
-                <a href="/" className="btn btn-success float-end mt-2">Listeye Dön</a>
+                <Link href="/">
+                    <a className="btn btn-success float-end mt-2">Listeye Dön</a>
+                </Link>
                 <button className="btn btn-default pt-3" onClick={() => window.print()}>Yazdır</button>
             </div>
             <div id="yazdir" className="small" key={post.id}>
