@@ -20,7 +20,7 @@ export async function getStaticProps({ params }) {
     const post = await getRecordById(process.env.AIRTABLE_TABLE_NAME, params.id)
 
     // Pass post data to the page via props
-    return { props: { post }, revalidate: 240 }
+    return { props: { post }, revalidate: 1, }
   }
 
 export default function Show({post}){
