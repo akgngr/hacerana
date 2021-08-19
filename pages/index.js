@@ -65,7 +65,7 @@ export default function Home({posts}) {
   ];
 
   const pagesHook = async () => {
-    const response  = await fetch(process.env.PAGES_HOOK, {
+    const response  = await fetch(process.env.PAGES_HOOK_URL, {
       method: 'POST',
       mode: 'no-cors'
     })
@@ -78,8 +78,9 @@ export default function Home({posts}) {
 
   return (
     <Layout> 
+    <p>{process.env.PAGES_HOOK_URL}</p>
     <button onClick={pagesHook} className="btn btn-sm btn-success float-end">Formu Yenile</button>
-      <DataTable
+    <DataTable
         defaultSortAsc="DESC"
         title="Sağlıklı Yaşam Formu"
         columns={columns}
