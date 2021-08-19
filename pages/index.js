@@ -78,7 +78,6 @@ export default function Home({posts}) {
 
   return (
     <Layout> 
-    <p>{process.env.PAGES_HOOK_URL}</p>
     <button onClick={pagesHook} className="btn btn-sm btn-success float-end">Formu Yenile</button>
     <DataTable
         defaultSortAsc="DESC"
