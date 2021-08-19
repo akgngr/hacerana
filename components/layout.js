@@ -9,15 +9,19 @@ export default function Layout({ children }) {
       return <div>Loading ...</div>;
     }
 
+    
     return (
         <div className="container pt-3">
         {isAuthenticated ? (
         <div>
+          
           <div className="d-flex justify-content-between">
             <h2>Hoş Geldin <span className="text-success">{user.name}</span></h2>
+            <div className="right">
             <button className="btn btn-danger" onClick={() => logout({ returnTo: process.env.NEXT_PUBLIC_URL })}>
               Çıkış Yap
             </button>
+            </div>
           </div>
           
           <div>

@@ -64,10 +64,21 @@ export default function Home({posts}) {
       }
   ];
 
-
+  const pagesHook = async () => {
+    const response  = await fetch(process.env.PAGES_HOOK, {
+      method: 'POST',
+      mode: 'no-cors'
+    })
+    if(response) {
+      alert('Başarılı bir şekilde form yenilendi. Lütfen 3 dakika sonra sayfayı yenileyin.')
+    } else{
+      alert('işlem başarısız.')
+    }
+  }
 
   return (
     <Layout> 
+    <button onClick={pagesHook} className="btn btn-sm btn-success float-end">Formu Yenile</button>
       <DataTable
         defaultSortAsc="DESC"
         title="Sağlıklı Yaşam Formu"
