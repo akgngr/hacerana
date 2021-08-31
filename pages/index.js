@@ -22,8 +22,8 @@ export default function Home({posts}) {
           cinsiyet: post.fields.cinsiyet,
           yas: post.fields.yas,
           yasadigi_il: post.fields.yasadigi_il,
-          created: moment(post.fields.created).format('d/m/Y')  ,
-          islem: <a href={"/show/"+post.id}>see</a>
+          created: post.fields.created, //moment(post.fields.created).format('d/m/Y')  ,
+          islem: <a href={"/show/"+post.id}>Görüntüle</a>
         }
   ));
     

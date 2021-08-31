@@ -56,10 +56,8 @@ export default function Show({post}){
                         <div><span className="fw-bolder">Doğduğu Saat: </span><span>{post.fields.dogumsaati}</span></div>
                     </div>
                 </div>
-
-                <div className="pb-3"><span className="fw-bolder">Adresi:</span><span>{post.fields.adres}</span></div>
-              
-                <div className="row pb-3">
+                <hr />
+                <div className="row ">
                     <div className="col">
                         <div><span className="fw-bolder">Anne sütü kullandınız mı?:</span><span>{post.fields.anne_sutu}</span></div>
                         <div><span className="fw-bolder">Kronik hastalığınız var mı?:</span><span>{post.fields.kronik_hastalik}</span></div>
@@ -80,8 +78,6 @@ export default function Show({post}){
                         <div><span className="fw-bolder">Kansızlık hikayeniz var mı?: </span><span>{post.fields.kansizlik}</span></div>
                     </div>
                     <div className="col">
-                        
-                        
                         <div><span className="fw-bolder">Saç şekliniz nasıl?:</span><span>{post.fields.sac_sekli}</span></div>
                         <div><span className="fw-bolder">Unutkanlık var mı?:</span><span>{post.fields.unutkanlik}</span></div>
                         <div><span className="fw-bolder">Kas yapısı nasıl?:</span><span>{post.fields.kas_yapisi}</span></div>
@@ -100,7 +96,7 @@ export default function Show({post}){
                     </div>
                 </div>
 
-                <div className="row pb-3">
+                <div className="row ">
                     <div className="col">
                         <div><span className="fw-bolder">Vücudunuzda sivilce çıkıyor mu?: </span><span>{post.fields.sivilce}</span></div>
                         {post.fields.sivilce === 'Evet' &&(
@@ -131,7 +127,28 @@ export default function Show({post}){
                         {post.fields.alerjik_durum === "Var" &&(
                             <div><span className="fw-bolder">Alerji olduğunuz bir şey var mı?: </span><span>{post.fields.alerji_oldugu_sey}</span></div>
                         )}
-                    
+
+                        {post.fields.cinsiyet === "Kadın" &&(
+                            <>
+                                <div><span className="fw-bolder">Kistiniz var mı?:</span><span>{post.fields.kist}</span></div>
+                                <div><span className="fw-bolder">Adetleriniz düzenli mi? Ağrılı mı?: </span><span>{post.fields.adet_duzeni}</span></div>
+                                <div><span className="fw-bolder">Vajinal akıntı, mantar veya kaşıntı var mı?:</span><span>{post.fields.vajinal_akinti}</span></div>
+
+                                {post.fields.medeni_durum === "Evli" &&(
+                                    <div className="row">
+                                        <div className="col">
+                                            <div><span className="fw-bolder">Eşinizle hangi sıklıkla birlikte oluyorsunuz?: </span><span>{post.fields.iliski}</span></div>
+                                            <div><span className="fw-bolder">O. oluyor musunuz?:</span><span>{post.fields.orgasm}</span></div>
+                                        </div>
+                                        <div className="col">
+                                            <div><span className="fw-bolder">Kaç doğum yaptınız?:</span><span>{post.fields.dogum_sayisi}</span></div>
+                                            <div><span className="fw-bolder">Doğum yapma şekliniz?: </span><span>{post.fields.dogum_yapma_sekli}</span></div>
+                                        </div>
+                                    </div>
+                                )}
+                                
+                            </>
+                        )}
                     </div>
                     <div className="col">
                         <div><span className="fw-bolder">Hormonal bir sıkıntınız var mı?: </span><span>{post.fields.hormonal_sikinti}</span></div>
@@ -174,27 +191,7 @@ export default function Show({post}){
                     </div>
                 </div>
               
-              {post.fields.cinsiyet === "Kadın" &&(
-                <>
-                    <div><span className="fw-bolder">Kistiniz var mı?:</span><span>{post.fields.kist}</span></div>
-                    <div><span className="fw-bolder">Adetleriniz düzenli mi? Ağrılı mı?: </span><span>{post.fields.adet_duzeni}</span></div>
-                    <div><span className="fw-bolder">Vajinal akıntı, mantar veya kaşıntı var mı?:</span><span>{post.fields.vajinal_akinti}</span></div>
-
-                    {post.fields.medeni_durum === "Evli" &&(
-                        <div className="row">
-                            <div className="col">
-                                <div><span className="fw-bolder">Eşinizle hangi sıklıkla birlikte oluyorsunuz?: </span><span>{post.fields.iliski}</span></div>
-                                <div><span className="fw-bolder">O. oluyor musunuz?:</span><span>{post.fields.orgasm}</span></div>
-                            </div>
-                            <div className="col">
-                                <div><span className="fw-bolder">Kaç doğum yaptınız?:</span><span>{post.fields.dogum_sayisi}</span></div>
-                                <div><span className="fw-bolder">Doğum yapma şekliniz?: </span><span>{post.fields.dogum_yapma_sekli}</span></div>
-                            </div>
-                        </div>
-                    )}
-                     
-                </>
-              )}
+              
               <div className="row">
                 <div className="col"><span className="fw-bolder">Kullandığınız baharat ve bitki çayları?: </span><span>{post.fields.baharat_bitki_icecekleri}</span></div>
                 <div className="col"><span className="fw-bolder">Eklemek istediğiniz rahatsızlıklarınız var mı?:</span><span>{post.fields.eklenen_hastalik}</span></div>
